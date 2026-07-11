@@ -21,6 +21,18 @@ declare(strict_types=1);
 
 return [
     
+  '20260707-midyear-production-operation-summary' => [
+    'slug'     => '20260707-midyear-production-operation-summary',
+    'title'    => '湖北鄂重建设工程有限公司马年年中生产经营总结会议',
+    'date'     => '2026-07-07',
+    'category' => '公司新闻',
+    'cover'    => 'https://static.ezhong.co/assets/images/news/湖北鄂重建设工程有限公司马年年中生产经营总结会议.png?x-oss-process=image/format,webp/interlace,1',
+    'summary'  => '湖北鄂重建设工程有限公司召开马年年中生产经营总结会议，系统回顾上半年生产经营工作，分析当前重点任务，并对下半年项目履约、安全质量、市场拓展和经营管理工作作出安排。',
+    'featured' => true,
+    'sort'     => 20260707,
+    'view'     => __DIR__ . '/../news_20260707-湖北鄂重建设工程有限公司马年年中生产经营总结会议.php',
+  ],
+  
   'sanxia-lingdaoshicha' => [
     'slug'     => 'sanxia-lingdaoshicha',
     'title'    => '中国三峡-湖北能源领导视察罗田平坦原压力钢管厂',
