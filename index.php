@@ -1,50 +1,59 @@
 <?php
 declare(strict_types=1);
 
-$root      = __DIR__;
+$root = __DIR__;
 $views_dir = $root . '/views';
 
-// 读取 ?p=，默认 home
-$page = isset($_GET['p']) && $_GET['p'] !== '' ? trim($_GET['p']) : 'home';
+require_once $root . '/includes/helpers.php';
 
-// 允许访问的视图（按照你真的存在的文件来列）
-$allowed = ['home','product','project','news','factory','contact','about','404','news_20241118平坦原中标','news_葛洲坝临近春节送温暖','news_鄂重建设新年开业仪式','news_20250825奉新中标'];
-
-// 计算视图文件
-$view_file = $views_dir . '/' . $page . '.php';
-
-error_log("DEBUG views_dir = " . $views_dir);
-error_log("DEBUG want page = " . $page);
-error_log("DEBUG view_file = " . $view_file . ' | exists? ' . (is_file($view_file) ? 'YES' : 'NO'));
-if (!is_file($view_file)) {
-  error_log("DEBUG scandir(views) = " . implode(', ', scandir($views_dir)));
-}
-
-// 不在白名单或文件不存在 -> 404
-if (!in_array($page, $allowed, true) || !is_file($view_file)) {
-  http_response_code(404);           // ← 新增
-  $page      = '404';
-  $view_file = $views_dir . '/404.php';
-  error_log('MISS VIEW: ' . $view_file);
-}
-
-// 传给 layout.php 用
-$current_page = $page;        // 导航高亮
-$current_section = in_array($page, ['product','project'], true)
-  ? ($page === 'product' ? 'products' : 'projects')
-  : $page;
-
-
-
-$content_view = $view_file;   // 正文视图的绝对路径
-
-// 让视图能拿到 slug（如 /?p=product&slug=hzw11s-180x3200）
+$page = isset($_GET['p']) && $_GET['p'] !== '' ? trim((string)$_GET['p']) : 'home';
 $slug = isset($_GET['slug']) ? trim((string)$_GET['slug']) : null;
 
+$allowed = ['home', 'product', 'project', 'news', 'factory', 'contact', 'about', '404'];
+
+$title = '湖北鄂重建设工程有限公司 - 专业压力钢管制造与安装';
+$description = '湖北鄂重建设工程有限公司，专业从事新能源行业风电塔筒、水电压力钢管等高强度钢结构的设计、制造和安装服务。';
+
+if (!in_array($page, $allowed, true)) {
+  http_response_code(404);
+  $page = '404';
+}
+
+if ($page === 'product' && $slug) {
+  $products = require $views_dir . '/data/products.php';
+  if (isset($products[$slug])) {
+    $title = $products[$slug]['name'] . ' - 湖北鄂重建设工程有限公司';
+    $description = $products[$slug]['summary'] ?? ($products[$slug]['meta']['project'] ?? $description);
+  }
+}
+
+if ($page === 'project' && $slug) {
+  $projects = require $views_dir . '/data/projects.php';
+  if (isset($projects[$slug])) {
+    $title = $projects[$slug]['name'] . ' - 湖北鄂重建设工程有限公司';
+    $description = $projects[$slug]['summary'] ?? $description;
+  }
+}
+
+if ($page === 'news' && $slug) {
+  $news = require $views_dir . '/data/news.php';
+  if (isset($news[$slug])) {
+    $title = $news[$slug]['title'] . ' - 湖北鄂重建设工程有限公司';
+    $description = $news[$slug]['summary'] ?? $description;
+  }
+}
+
+$view_file = $views_dir . '/' . $page . '.php';
+if (!is_file($view_file)) {
+  http_response_code(404);
+  $page = '404';
+  $view_file = $views_dir . '/404.php';
+}
+
+$current_page = $page;
+$current_section = in_array($page, ['product', 'project'], true)
+  ? ($page === 'product' ? 'products' : 'projects')
+  : $page;
+$content_view = $view_file;
 
 include $views_dir . '/layout.php';
-
-
-
-
-

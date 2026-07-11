@@ -4,7 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <title><?= htmlspecialchars($title ?? '湖北鄂重建设工程有限公司 - 专业压力钢管制造与安装') ?></title>
+  <title><?= e($title ?? '湖北鄂重建设工程有限公司 - 专业压力钢管制造与安装') ?></title>
+  <meta name="description" content="<?= e($description ?? '湖北鄂重建设工程有限公司，专业压力钢管制造与安装。') ?>">
     <!--向上箭头-->
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
