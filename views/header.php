@@ -18,13 +18,13 @@
         <img src="https://static.ezhong.co/assets/images/logo-ezhong.png" alt="湖北鄂重建设工程有限公司 Logo"
              class="w-12 h-12 md:w-14 md:h-14 rounded-xl object-contain bg-white p-1 shadow-inner shrink-0"/>
         <div class="ml-4">
-          <h1 class="text-2xl font-bold text-primary">湖北鄂重建设工程有限公司</h1>
+          <h1 class="text-lg lg:text-xl xl:text-2xl font-bold text-primary whitespace-nowrap">湖北鄂重建设工程有限公司</h1>
           <p class="text-gray-600 text-sm">专业压力钢管制造与安装</p>
         </div>
       </div>
 
     <?php /* header.php 片段 —— 导航 */ ?>
-    <div class="hidden md:flex items-center gap-8 ml-auto">
+    <div class="hidden md:flex items-center gap-3 lg:gap-5 xl:gap-7 ml-auto">
       <a href="/?p=home#home"
          class="nav-link text-gray-800 font-medium <?= $current_page==='home' ? 'active-link' : '' ?>"
          data-section="home">网站首页</a>
@@ -43,6 +43,12 @@
          class="nav-link text-gray-800 font-medium <?= ($current_section ?? '')==='projects' ? 'active-link' : '' ?>"
          data-section="projects">案例展示</a>
     
+      <a
+          href="/?p=innovation"
+          class="nav-link text-gray-800 font-medium <?= $current_page === 'innovation' ? 'active-link' : '' ?>"
+          <?= $current_page === 'innovation' ? 'aria-current="page"' : '' ?>
+        >科技创新</a>
+
       <a href="/?p=home#news"
          class="nav-link text-gray-800 font-medium <?= ($current_section ?? '')==='news' ? 'active-link' : '' ?>"
          data-section="news">新闻动态</a>
@@ -69,6 +75,10 @@
         <a href="/?p=about" class="py-2 px-4 rounded font-medium">关于我们</a>
         <a href="/?p=home#products" class="py-2 px-4 rounded font-medium">产品中心</a>
         <a href="/?p=home#projects" class="py-2 px-4 rounded font-medium">案例展示</a>
+        <a href="/?p=innovation"
+          class="py-2 px-4 rounded font-medium <?= $current_page === 'innovation' ? 'bg-gray-100 text-primary' : '' ?>"
+          <?= $current_page === 'innovation' ? 'aria-current="page"' : '' ?>
+            >科技创新</a>
         <a href="/?p=home#news" class="py-2 px-4 rounded font-medium">新闻动态</a>
         <a href="/?p=home#factory" class="py-2 px-4 rounded font-medium">厂区展示</a>
         <a href="/?p=home#contact" class="py-2 px-4 rounded font-medium">联系我们</a>

@@ -9,7 +9,17 @@ require_once $root . '/includes/helpers.php';
 $page = isset($_GET['p']) && $_GET['p'] !== '' ? trim((string)$_GET['p']) : 'home';
 $slug = isset($_GET['slug']) ? trim((string)$_GET['slug']) : null;
 
-$allowed = ['home', 'product', 'project', 'news', 'factory', 'contact', 'about', '404'];
+$allowed = [
+  'home',
+  'about',
+  'product',
+  'project',
+  'innovation',
+  'news',
+  'factory',
+  'contact',
+  '404',
+];
 
 $title = '湖北鄂重建设工程有限公司 - 专业压力钢管制造与安装';
 $description = '湖北鄂重建设工程有限公司，专业从事新能源行业风电塔筒、水电压力钢管等高强度钢结构的设计、制造和安装服务。';
@@ -34,6 +44,12 @@ if ($page === 'project' && $slug) {
     $description = $projects[$slug]['summary'] ?? $description;
   }
 }
+
+if ($page === 'innovation') {
+  $title = '科技创新 - 湖北鄂重建设工程有限公司';
+  $description = '湖北鄂重建设工程有限公司围绕压力钢管智能制造、复杂钢结构成形、焊接工艺、质量检测与产学研合作开展技术创新。';
+}
+
 
 if ($page === 'news' && $slug) {
   $news = require $views_dir . '/data/news.php';

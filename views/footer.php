@@ -13,6 +13,7 @@
             <li><a href="/?p=about" class="text-gray-400 hover:text-white transition">关于我们</a></li>
             <li><a href="/?p=home#products" class="text-gray-400 hover:text-white transition">产品中心</a></li>
             <li><a href="/?p=home#projects" class="text-gray-400 hover:text-white transition">案例展示</a></li>
+            <li><a href="/?p=innovation" class="text-gray-400 hover:text-white transition">科技创新</a></li>
           </ul>
         </div>
         <div>
