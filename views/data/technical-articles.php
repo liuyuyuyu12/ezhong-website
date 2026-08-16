@@ -107,6 +107,9 @@ return [
     'content_view' =>
       __DIR__ . '/../technical/high-strength-steel-roll-bending-springback.php',
   ],
+
+
+
    'three-roll-bending-edge-prebending' => [
 
   'slug' =>
@@ -244,5 +247,200 @@ return [
     __DIR__
     . '/../technical/three-roll-bending-edge-prebending.php',
 
-], 
+],
+
+  'pumped-storage-high-strength-penstock-fabrication-installation' => [
+
+    'slug' =>
+      'pumped-storage-high-strength-penstock-fabrication-installation',
+
+    'title' =>
+      '抽水蓄能电站高强钢压力钢管如何制作与安装？从钢板成形到洞内安装的完整流程',
+
+    'short_title' =>
+      '抽水蓄能高强钢压力钢管如何制作与安装？',
+
+    'category' =>
+      '压力钢管',
+
+    'summary' =>
+      '抽水蓄能电站的高强钢压力钢管是如何从一张钢板变成地下输水系统关键构件的？本文结合公开工程研究与湖北鄂重实际项目，系统介绍钢板检验、数控下料、坡口加工、板头预弯、三辊卷制、组圆校圆、纵缝与环缝焊接、无损检测、防腐、运输及洞内安装等主要流程。',
+
+    /*
+     * 封面采用公司自己的真实抽水蓄能项目图片，
+     * 比技术示意图更适合作为文章封面和分享图片。
+     */
+    'cover' =>
+      'https://static.ezhong.co/assets/images/examples/中国葛洲坝集团二公司罗田平坦原抽水蓄能.png?x-oss-process=image/format,webp/interlace,1',
+
+    'images' => [
+
+      /*
+       * AI原创：完整制作安装流程
+       */
+      'process_flow' => [
+        'url' =>
+          'https://static.ezhong.co/assets/images/technology/pumped-storage-penstock/pumped-storage-high-strength-penstock-fabrication-installation-process.png',
+
+        'width' => 1493,
+        'height' => 1054,
+
+        'alt' =>
+          '抽水蓄能高强钢压力钢管从原材料检验、板头预弯、三辊卷制、纵缝焊接到洞内安装的完整流程示意图',
+      ],
+
+      /*
+       * AI原创：焊接质量控制
+       */
+      'welding_quality' => [
+        'url' =>
+          'https://static.ezhong.co/assets/images/technology/pumped-storage-penstock/high-strength-penstock-welding-quality-control.png',
+
+        'width' => 1491,
+        'height' => 1055,
+
+        'alt' =>
+          '高强钢压力钢管焊接工艺评定、预热、热输入、层间温度和无损检测质量控制示意图',
+      ],
+
+      /*
+       * 湖北鄂重实际项目
+       */
+      'pingtanyuan' => [
+        'url' =>
+          'https://static.ezhong.co/assets/images/examples/中国葛洲坝集团二公司罗田平坦原抽水蓄能.png?x-oss-process=image/format,webp/interlace,1',
+
+        'alt' =>
+          '湖北鄂重罗田平坦原抽水蓄能电站压力钢管制作及安装项目现场',
+      ],
+
+      /*
+       * 板头预弯设备
+       */
+      'prebending_press' => [
+        'url' =>
+          'https://static.ezhong.co/assets/images/products/Y32-50000KN钢板板头预弯油压机.jpg?x-oss-process=image/format,webp/interlace,1',
+
+        'alt' =>
+          '湖北鄂重Y32-50000KN钢板板头预弯油压机用于抽水蓄能高强钢压力管道制造',
+      ],
+
+      /*
+       * 三辊卷制设备
+       */
+      'rolling_machine' => [
+        'url' =>
+          'https://static.ezhong.co/assets/images/products/HZW11S-180×3200 全液压微控变中心距三辊卷板机.jpg?x-oss-process=image/format,webp/interlace,1',
+
+        'alt' =>
+          '湖北鄂重HZW11S-180×3200三辊卷板机用于800MPa抽水蓄能压力管道卷制',
+      ],
+
+      /*
+       * 方变圆实际项目
+       */
+      'transition_piece' => [
+        'url' =>
+          'https://static.ezhong.co/assets/images/examples/中国葛洲坝集团罗田平坦原抽水蓄能水电站的方变圆制作.jpg?x-oss-process=image/format,webp/interlace,1',
+
+        'alt' =>
+          '湖北鄂重罗田平坦原抽水蓄能电站压力钢管方变圆制作现场',
+      ],
+
+      /*
+       * 奉新岔管
+       */
+      'branch_pipe' => [
+        'url' =>
+          'https://static.ezhong.co/assets/images/examples/中国葛洲坝集团江西奉新抽水蓄能水电站岔管制作.jpg?x-oss-process=image/format,webp/interlace,1',
+
+        'alt' =>
+          '湖北鄂重江西奉新抽水蓄能电站钢岔管制作现场',
+      ],
+
+      /*
+       * 岔管及月牙板
+       */
+      'branch_rib' => [
+        'url' =>
+          'https://static.ezhong.co/assets/images/examples/罗田平坦原平坦原岔管及月牙板制作现场图片.png?x-oss-process=image/format,webp/interlace,1',
+
+        'alt' =>
+          '湖北鄂重罗田平坦原抽水蓄能岔管及月牙板制作现场',
+      ],
+
+    ],
+
+    'date' =>
+      '2026-08-16',
+
+    'updated_at' =>
+      '2026-08-16',
+
+    'author' =>
+      '湖北鄂重技术团队',
+
+    /*
+     * 暂时不抢第一篇的编辑推荐位。
+     */
+    'featured' =>
+      false,
+
+    /*
+     * 比前两篇新，所以排序最大。
+     */
+    'sort' =>
+      2026081603,
+
+    'keywords' => [
+
+      '抽水蓄能压力钢管',
+
+      '高强钢压力钢管',
+
+      '压力钢管制作',
+
+      '压力钢管安装',
+
+      '压力钢管制作及安装',
+
+      '800MPa压力钢管',
+
+      '抽水蓄能电站',
+
+      '压力钢管焊接',
+
+      '压力钢管卷制',
+
+      '钢岔管',
+
+      '方变圆',
+
+    ],
+
+    'meta_title' =>
+      '抽水蓄能高强钢压力钢管制作及安装流程｜湖北鄂重',
+
+    'meta_description' =>
+      '抽水蓄能电站高强钢压力钢管如何制作和安装？湖北鄂重结合工程实践介绍钢板检验、下料、板头预弯、卷制组圆、纵缝与环缝焊接、无损检测、方变圆和钢岔管制作以及洞内安装流程。',
+
+    'share' => [
+
+      'title' =>
+        '抽水蓄能高强钢压力钢管如何制作与安装？完整流程解析',
+
+      'description' =>
+        '从高强钢板到地下压力钢管，系统了解预弯、卷制、组圆、纵缝焊接、环缝焊接、检测和洞内安装全过程。',
+
+      'image' =>
+        'https://static.ezhong.co/assets/images/examples/中国葛洲坝集团二公司罗田平坦原抽水蓄能.png?x-oss-process=image/format,webp/interlace,1',
+
+    ],
+
+    'content_view' =>
+      __DIR__
+      . '/../technical/pumped-storage-high-strength-penstock-fabrication-installation.php',
+
+  ],
+
 ];
