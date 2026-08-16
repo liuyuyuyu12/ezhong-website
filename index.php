@@ -15,6 +15,8 @@ $allowed = [
   'product',
   'project',
   'innovation',
+  'technical',
+  'technical-article',
   'news',
   'factory',
   'contact',
@@ -23,6 +25,8 @@ $allowed = [
 
 $title = '湖北鄂重建设工程有限公司 - 专业压力钢管制造与安装';
 $description = '湖北鄂重建设工程有限公司，专业从事新能源行业风电塔筒、水电压力钢管等高强度钢结构的设计、制造和安装服务。';
+$canonical = 'https://ezhong.co/';
+$og_image = 'https://static.ezhong.co/assets/images/logo-ezhong.png';
 
 if (!in_array($page, $allowed, true)) {
   http_response_code(404);
@@ -50,6 +54,38 @@ if ($page === 'innovation') {
   $description = '湖北鄂重建设工程有限公司围绕压力钢管智能制造、复杂钢结构成形、焊接工艺、质量检测与产学研合作开展技术创新。';
 }
 
+if ($page === 'technical') {
+  $title = '技术专栏 - 压力钢管、卷板成形与智能制造技术｜湖北鄂重';
+  $description = '湖北鄂重技术专栏，分享压力钢管、三辊卷板、高强钢成形、焊接检测、抽水蓄能及智能制造等工程技术知识与实践经验。';
+  $canonical = 'https://ezhong.co/?p=technical';
+}
+
+if ($page === 'technical-article') {
+  $technical_articles = require $views_dir . '/data/technical-articles.php';
+
+  if (!$slug || !isset($technical_articles[$slug])) {
+    http_response_code(404);
+    $page = '404';
+
+    $title = '页面不存在 - 湖北鄂重建设工程有限公司';
+    $description = '您访问的技术文章不存在或已调整。';
+    $canonical = 'https://ezhong.co/?p=404';
+  } else {
+    $technical_article = $technical_articles[$slug];
+
+    $title = $technical_article['meta_title']
+      ?? ($technical_article['title'] . '｜湖北鄂重');
+
+    $description = $technical_article['meta_description']
+      ?? ($technical_article['summary'] ?? $description);
+
+    $canonical =
+      'https://ezhong.co/?p=technical-article&slug='
+      . rawurlencode($slug);
+
+    $og_image = $technical_article['cover'] ?? $og_image;
+  }
+}
 
 if ($page === 'news' && $slug) {
   $news = require $views_dir . '/data/news.php';
@@ -67,9 +103,15 @@ if (!is_file($view_file)) {
 }
 
 $current_page = $page;
-$current_section = in_array($page, ['product', 'project'], true)
-  ? ($page === 'product' ? 'products' : 'projects')
-  : $page;
+if ($page === 'product') {
+  $current_section = 'products';
+} elseif ($page === 'project') {
+  $current_section = 'projects';
+} elseif ($page === 'technical-article') {
+  $current_section = 'technical';
+} else {
+  $current_section = $page;
+}
 $content_view = $view_file;
 
 include $views_dir . '/layout.php';

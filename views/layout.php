@@ -1,3 +1,9 @@
+<?php
+$isTechnicalArticle =
+  (($current_page ?? '') === 'technical-article')
+  || (($page ?? '') === 'technical-article');
+?>
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -6,6 +12,51 @@
 
   <title><?= e($title ?? '湖北鄂重建设工程有限公司 - 专业压力钢管制造与安装') ?></title>
   <meta name="description" content="<?= e($description ?? '湖北鄂重建设工程有限公司，专业压力钢管制造与安装。') ?>">
+    <?php if (!empty($canonical)): ?>
+      <link
+        rel="canonical"
+        href="<?= e($canonical) ?>"
+      >
+    <?php endif; ?>
+    
+    <meta
+      property="og:title"
+      content="<?= e($title ?? '') ?>"
+    >
+    
+    <meta
+      property="og:description"
+      content="<?= e($description ?? '') ?>"
+    >
+    
+    <meta
+      property="og:type"
+      content="<?= ($current_page ?? '') === 'technical-article' ? 'article' : 'website' ?>"
+    >
+    
+    <?php if (!empty($canonical)): ?>
+      <meta
+        property="og:url"
+        content="<?= e($canonical) ?>"
+      >
+    <?php endif; ?>
+    
+    <?php if (!empty($og_image)): ?>
+      <meta
+        property="og:image"
+        content="<?= e($og_image) ?>"
+      >
+    <?php endif; ?>
+    
+    <?php if ($isTechnicalArticle): ?>
+
+      <link
+        rel="stylesheet"
+        href="/assets/vendor/photoswipe/photoswipe.css"
+      >
+    
+    <?php endif; ?>
+
     <!--向上箭头-->
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
@@ -63,6 +114,65 @@
     .proj-thumbs .swiper-slide img {
       width: 100%; height: 100%; object-fit: cover;
     }
+    
+    /* =====================================================
+       技术文章移动端体验
+       ===================================================== */
+    
+    .article-image-zoom {
+      position: relative;
+      display: block;
+      cursor: zoom-in;
+      -webkit-tap-highlight-color: transparent;
+    }
+    
+    .article-image-zoom img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    
+    .article-image-zoom .zoom-hint {
+      position: absolute;
+      right: 12px;
+      bottom: 12px;
+    
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    
+      padding: 7px 11px;
+    
+      border-radius: 999px;
+    
+      background: rgba(15, 23, 42, 0.72);
+      color: #fff;
+    
+      font-size: 13px;
+    
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    
+      pointer-events: none;
+    }
+    
+    /* 给移动端底部操作栏预留空间 */
+    @media (max-width: 1023px) {
+    
+      body.technical-article-page {
+        padding-bottom: calc(78px + env(safe-area-inset-bottom));
+      }
+    
+      /*
+       * 避免原有返回顶部按钮
+       * 与文章底部分享栏重叠
+       */
+      body.technical-article-page #back-to-top {
+        bottom: calc(92px + env(safe-area-inset-bottom));
+        right: 16px;
+      }
+    
+    }
 
   </style>
 
@@ -75,13 +185,21 @@
 
   <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://static.ezhong.co/assets/vendor/swiper/swiper-bundle.min.css">
+  <?php if ($isTechnicalArticle): ?>
+
+      <link
+        rel="stylesheet"
+        href="/assets/vendor/photoswipe/photoswipe.css"
+      >
+
+  <?php endif; ?>
 
   <!-- 阿里云 Web 播放器（CSS/JS） -->
   <link rel="stylesheet" href="https://g.alicdn.com/apsara-media-box/imp-web-player/2.25.1/skins/default/aliplayer-min.css">
   <script src="https://g.alicdn.com/apsara-media-box/imp-web-player/2.25.1/aliplayer-min.js"></script>
   <!-- 官方“快速接入 Web 播放器”明确要求把这两个资源引到页面里。:contentReference[oaicite:1]{index=1} -->
 </head>
-<body>
+<body class="<?= ($current_page ?? '') === 'technical-article' ? 'technical-article-page' : '' ?>">
 
   <?php include __DIR__.'/header.php'; ?>
 
@@ -105,5 +223,142 @@
       });
     });
     </script>
+    
+    <?php if ($isTechnicalArticle): ?>
+
+    <?php if ($isTechnicalArticle): ?>
+    
+    <script type="module">
+    
+      import PhotoSwipeLightbox
+        from '/assets/vendor/photoswipe/photoswipe-lightbox.esm.js';
+    
+    
+      const gallery =
+        document.querySelector(
+          '.technical-article-body'
+        );
+    
+    
+      if (gallery) {
+    
+        const lightbox =
+          new PhotoSwipeLightbox({
+    
+            /*
+             * 整篇技术文章作为一个图库
+             */
+            gallery:
+              '.technical-article-body',
+    
+            /*
+             * 只处理技术文章中的可放大图片
+             */
+            children:
+              'a.article-image-zoom',
+    
+            /*
+             * 打开时让整张图片适应屏幕
+             */
+            initialZoomLevel:
+              'fit',
+    
+            /*
+             * 点击图片后的第二档缩放
+             */
+            secondaryZoomLevel:
+              1.5,
+    
+            /*
+             * 允许最大放大 3 倍
+             */
+            maxZoomLevel:
+              3,
+    
+            /*
+             * PC重点：
+             * 鼠标滚轮直接控制图片缩放
+             */
+            wheelToZoom:
+              true,
+    
+            /*
+             * 单击图片：
+             * 放大 / 缩小
+             */
+            imageClickAction:
+              'zoom',
+    
+            /*
+             * 双击图片：
+             * 放大 / 缩小
+             */
+            doubleTapAction:
+              'zoom',
+    
+            /*
+             * 点击图片外围黑色区域：
+             * 关闭查看器
+             */
+            bgClickAction:
+              'close',
+    
+            /*
+             * 中文按钮提示
+             */
+            closeTitle:
+              '关闭图片',
+    
+            zoomTitle:
+              '缩放图片',
+    
+            arrowPrevTitle:
+              '上一张图片',
+    
+            arrowNextTitle:
+              '下一张图片',
+    
+            errorMsg:
+              '图片加载失败',
+    
+            indexIndicatorSep:
+              ' / ',
+    
+            /*
+             * 动态加载 PhotoSwipe Core
+             */
+            pswpModule:
+              () =>
+                import(
+                  '/assets/vendor/photoswipe/photoswipe.esm.js'
+                )
+    
+          });
+    
+    
+        lightbox.init();
+    
+    
+        /*
+         * 调试信息
+         */
+        console.info(
+          '[EZHONG PhotoSwipe] initialized'
+        );
+    
+      } else {
+    
+        console.warn(
+          '[EZHONG PhotoSwipe] gallery not found'
+        );
+    
+      }
+    
+    </script>
+    
+    <?php endif; ?>
+    
+    <?php endif; ?>
+    
 </body>
 </html>

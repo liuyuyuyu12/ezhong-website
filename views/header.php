@@ -24,7 +24,7 @@
       </div>
 
     <?php /* header.php 片段 —— 导航 */ ?>
-    <div class="hidden md:flex items-center gap-3 lg:gap-5 xl:gap-7 ml-auto">
+    <div class="hidden xl:flex items-center gap-4 ml-auto">
       <a href="/?p=home#home"
          class="nav-link text-gray-800 font-medium <?= $current_page==='home' ? 'active-link' : '' ?>"
          data-section="home">网站首页</a>
@@ -48,7 +48,12 @@
           class="nav-link text-gray-800 font-medium <?= $current_page === 'innovation' ? 'active-link' : '' ?>"
           <?= $current_page === 'innovation' ? 'aria-current="page"' : '' ?>
         >科技创新</a>
-
+      
+      <a
+          href="/?p=technical"
+          class="nav-link text-gray-800 font-medium <?= ($current_section ?? '') === 'technical' ? 'active-link' : '' ?>"
+          <?= ($current_section ?? '') === 'technical' ? 'aria-current="page"' : '' ?>>技术专栏</a>
+      
       <a href="/?p=home#news"
          class="nav-link text-gray-800 font-medium <?= ($current_section ?? '')==='news' ? 'active-link' : '' ?>"
          data-section="news">新闻动态</a>
@@ -61,7 +66,7 @@
       <a href="/?p=home#contact" class="nav-link text-gray-800 font-medium" data-section="contact">联系我们</a>
     </div>
 
-      <div class="ml-auto md:hidden">
+      <div class="ml-auto xl:hidden">
         <button id="mobile-menu-btn" class="text-gray-800 p-2">
           <i class="fas fa-bars text-2xl"></i>
         </button>
@@ -69,7 +74,7 @@
     </div>
 
     <!-- 移动端菜单 -->
-    <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-md py-4 px-4 absolute w-full left-0 top-full shadow-lg z-50">
+    <div id="mobile-menu" class="hidden xl:hidden bg-white/95 backdrop-blur-md py-4 px-4 absolute w-full left-0 top-full shadow-lg z-50">
       <div class="flex flex-col space-y-3">
         <a href="/?p=home#home" class="py-2 px-4 bg-gray-100 rounded font-medium">网站首页</a>
         <a href="/?p=about" class="py-2 px-4 rounded font-medium">关于我们</a>
@@ -79,6 +84,11 @@
           class="py-2 px-4 rounded font-medium <?= $current_page === 'innovation' ? 'bg-gray-100 text-primary' : '' ?>"
           <?= $current_page === 'innovation' ? 'aria-current="page"' : '' ?>
             >科技创新</a>
+        <a
+          href="/?p=technical"
+          class="py-2 px-4 rounded font-medium <?= ($current_section ?? '') === 'technical' ? 'bg-gray-100 text-primary' : '' ?>"
+          <?= ($current_section ?? '') === 'technical' ? 'aria-current="page"' : '' ?>>技术专栏</a>
+            
         <a href="/?p=home#news" class="py-2 px-4 rounded font-medium">新闻动态</a>
         <a href="/?p=home#factory" class="py-2 px-4 rounded font-medium">厂区展示</a>
         <a href="/?p=home#contact" class="py-2 px-4 rounded font-medium">联系我们</a>
