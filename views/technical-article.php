@@ -86,13 +86,6 @@ $articleUrl = site_url(
         </span>
       <?php endif; ?>
 
-      <?php if (!empty($item['reading_time'])): ?>
-        <span class="text-gray-500">
-          <i class="fa-regular fa-clock mr-1"></i>
-          <?= e($item['reading_time']) ?>
-        </span>
-      <?php endif; ?>
-
     </div>
 
     <h1

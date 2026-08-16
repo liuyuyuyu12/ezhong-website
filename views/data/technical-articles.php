@@ -85,8 +85,6 @@ return [
 
     'author' => '湖北鄂重技术团队',
 
-    'reading_time' => '约 8 分钟',
-
     'featured' => true,
 
     'sort' => 2026081501,
@@ -131,7 +129,7 @@ return [
    * 不建议使用带大量中文字的技术示意图作为文章封面。
    */
   'cover' =>
-    'https://static.ezhong.co/assets/images/products/HZW11S-180×3200 全液压微控变中心距三辊卷板机.jpg?x-oss-process=image/format,webp/interlace,1',
+    'https://static.ezhong.co/assets/images/products/W11S-200×4500微控液压水平下调式三辊卷板机.jpg?x-oss-process=image/format,webp/interlace,1',
 
   /*
    * 本篇原创技术示意图
@@ -190,8 +188,6 @@ return [
   'author' =>
     '湖北鄂重技术团队',
 
-  'reading_time' =>
-    '约 9 分钟',
 
   /*
    * 如果第一篇已经 featured=true，
@@ -240,7 +236,7 @@ return [
       '钢板卷圆为什么需要先做板头预弯？湖北鄂重介绍板端直边产生原因、预弯作用及主要工艺影响因素。',
 
     'image' =>
-      'https://static.ezhong.co/assets/images/products/HZW11S-180×3200 全液压微控变中心距三辊卷板机.jpg?x-oss-process=image/format,webp/interlace,1',
+      'https://static.ezhong.co/assets/images/products/W11S-200×4500微控液压水平下调式三辊卷板机.jpg?x-oss-process=image/format,webp/interlace,1',
 
   ],
 

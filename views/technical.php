@@ -167,10 +167,6 @@ foreach ($articles as $key => $article) {
                 <?= e($featuredItem['date']) ?>
               </span>
 
-              <span class="text-gray-500">
-                <?= e($featuredItem['reading_time']) ?>
-              </span>
-
             </div>
 
             <h2

@@ -59,12 +59,8 @@ $url = site_url('technical-article', ['slug' => $slug]);
       </p>
     <?php endif; ?>
 
-    <div class="mt-5 flex items-center justify-between border-t border-gray-100 pt-4">
-
-      <span class="text-sm text-gray-500">
-        <?= e($item['reading_time'] ?? '') ?>
-      </span>
-
+    <div class="mt-5 flex items-center justify-end border-t border-gray-100 pt-4">
+    
       <a
         href="<?= e($url) ?>"
         class="inline-flex items-center gap-2 font-semibold text-primary transition hover:text-secondary"
@@ -72,7 +68,7 @@ $url = site_url('technical-article', ['slug' => $slug]);
         阅读全文
         <i class="fa-solid fa-arrow-right text-sm"></i>
       </a>
-
+    
     </div>
 
   </div>
