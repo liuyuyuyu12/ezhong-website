@@ -224,7 +224,6 @@ $isTechnicalArticle =
     });
     </script>
     
-    <?php if ($isTechnicalArticle): ?>
 
     <?php if ($isTechnicalArticle): ?>
     
@@ -358,7 +357,6 @@ $isTechnicalArticle =
     
     <?php endif; ?>
     
-    <?php endif; ?>
     
 </body>
 </html>
