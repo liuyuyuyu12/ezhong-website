@@ -443,4 +443,144 @@ return [
 
   ],
 
+
+    'pumped-storage-penstock-fabrication-installation-company' => [
+
+    'slug' =>
+      'pumped-storage-penstock-fabrication-installation-company',
+
+    'title' =>
+      '抽水蓄能压力钢管制作与安装公司怎么选？高强钢制造与专业安装队伍的7个关键判断',
+
+    'short_title' =>
+      '抽水蓄能压力钢管制作与安装公司怎么选？',
+
+    'category' =>
+      '压力钢管',
+
+    'summary' =>
+      '寻找抽水蓄能压力钢管制作与安装公司或专业安装队伍，不能只看报价和卷板设备。本文从类似项目经验、高强钢成形、板头预弯、焊接与检测、复杂构件制造、现场安装队伍和项目履约七个方面介绍选择要点，并结合湖北鄂重公开工程案例进行说明。',
+
+    /*
+     * 商业意图文章封面优先使用真实工程项目照片，
+     * 不建议使用带大量文字的技术示意图。
+     */
+    'cover' =>
+      'https://static.ezhong.co/assets/images/examples/中国葛洲坝集团二公司罗田平坦原抽水蓄能.png?x-oss-process=image/format,webp/interlace,1',
+
+    'images' => [
+
+      'pingtanyuan' => [
+        'url' =>
+          'https://static.ezhong.co/assets/images/examples/中国葛洲坝集团二公司罗田平坦原抽水蓄能.png?x-oss-process=image/format,webp/interlace,1',
+
+        'alt' =>
+          '湖北鄂重罗田平坦原抽水蓄能电站压力钢管制作及安装项目',
+      ],
+
+      'rolling_machine' => [
+        'url' =>
+          'https://static.ezhong.co/assets/images/products/HZW11S-180×3200 全液压微控变中心距三辊卷板机.jpg?x-oss-process=image/format,webp/interlace,1',
+
+        'alt' =>
+          '湖北鄂重用于抽水蓄能800MPa压力管道制造的HZW11S-180×3200三辊卷板机',
+      ],
+
+      'prebending_press' => [
+        'url' =>
+          'https://static.ezhong.co/assets/images/products/Y32-50000KN钢板板头预弯油压机.jpg?x-oss-process=image/format,webp/interlace,1',
+
+        'alt' =>
+          '湖北鄂重用于抽水蓄能800MPa压力管道板头预弯的Y32-50000KN油压机',
+      ],
+
+      'transition_piece' => [
+        'url' =>
+          'https://static.ezhong.co/assets/images/examples/中国葛洲坝集团罗田平坦原抽水蓄能水电站的方变圆制作.jpg?x-oss-process=image/format,webp/interlace,1',
+
+        'alt' =>
+          '湖北鄂重罗田平坦原抽水蓄能电站方变圆制作现场',
+      ],
+
+      'branch_pipe' => [
+        'url' =>
+          'https://static.ezhong.co/assets/images/examples/中国葛洲坝集团江西奉新抽水蓄能水电站岔管制作.jpg?x-oss-process=image/format,webp/interlace,1',
+
+        'alt' =>
+          '湖北鄂重江西奉新抽水蓄能电站钢岔管制作现场',
+      ],
+
+      'branch_rib' => [
+        'url' =>
+          'https://static.ezhong.co/assets/images/examples/罗田平坦原平坦原岔管及月牙板制作现场图片.png?x-oss-process=image/format,webp/interlace,1',
+
+        'alt' =>
+          '湖北鄂重罗田平坦原抽水蓄能岔管及月牙板制作现场',
+      ],
+
+    ],
+
+    'date' =>
+      '2026-08-17',
+
+    'updated_at' =>
+      '2026-08-17',
+
+    'author' =>
+      '湖北鄂重技术团队',
+
+    'featured' =>
+      false,
+
+    /*
+     * 比前三篇更大，使第四篇显示在“最新技术文章”前面。
+     */
+    'sort' =>
+      2026081704,
+
+    'keywords' => [
+
+      '抽水蓄能压力钢管',
+
+      '压力钢管制作与安装',
+
+      '压力钢管制作安装公司',
+
+      '压力钢管安装队伍',
+
+      '高强钢压力钢管',
+
+      '800MPa压力管道',
+
+      '钢岔管',
+
+      '方变圆',
+
+    ],
+
+    'meta_title' =>
+      '抽水蓄能压力钢管制作与安装公司怎么选？7个判断｜湖北鄂重',
+
+    'meta_description' =>
+      '寻找抽水蓄能压力钢管制作与安装公司或专业安装队伍，应重点考察哪些能力？本文从高强钢卷制、板头预弯、焊接检测、岔管与方变圆、现场安装及抽蓄项目经验等方面介绍7个判断要点。',
+
+    'share' => [
+
+      'title' =>
+        '抽水蓄能压力钢管制作与安装公司怎么选？7个关键判断',
+
+      'description' =>
+        '从类似抽蓄项目、高强钢成形、焊接检测、复杂构件到专业安装队伍，系统了解压力钢管制作安装单位应具备哪些能力。',
+
+      'image' =>
+        'https://static.ezhong.co/assets/images/examples/中国葛洲坝集团二公司罗田平坦原抽水蓄能.png?x-oss-process=image/format,webp/interlace,1',
+
+    ],
+
+    'content_view' =>
+      __DIR__
+      . '/../technical/pumped-storage-penstock-fabrication-installation-company.php',
+
+  ],
+
 ];
